@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plan your perfect Southeast Asia trip with Mekong Trails. Fill in our travel request form and we will design a personalised itinerary just for you." />
+  <meta property="og:title"       content="Plan My Trip — Mekong Trails" />
+  <meta property="og:description" content="Tell us where you want to go and we'll plan your perfect Southeast Asia journey." />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1200&q=80" />
+  <title>Plan My Trip — Mekong Trails</title>
+  <link rel="icon" href="https://fav.farm/🌏" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__logo" href="index.html" aria-label="Mekong Trails home">
+        <span class="nav__logo-mark" aria-hidden="true">🌏</span>
+        <span class="nav__logo-text">Mekong <span>Trails</span></span>
+      </a>
+      <button class="nav__toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__links" id="main-nav" role="list">
+        <a href="index.html"        role="listitem">Home</a>
+        <a href="about.html"        role="listitem">About</a>
+        <a href="destinations.html" role="listitem">Destinations</a>
+        <a href="itineraries.html"  role="listitem">Itineraries</a>
+        <a href="gallery.html"      role="listitem">Gallery</a>
+        <a href="blog.html"         role="listitem">Blog</a>
+        <a href="map.html"          role="listitem">Visit</a>
+        <span class="nav__cta"><a href="contact.html" class="btn btn--gold btn--sm">Plan My Trip</a></span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true"> › </span><span aria-current="page">Plan My Trip</span>
+        </nav>
+        <h1>Plan Your Perfect Trip</h1>
+        <p>Fill in the form below and our team will craft a personalised itinerary within 48 hours — completely free.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading" class="visually-hidden">Travel Request Form</h2>
+
+        <div class="form-layout">
+
+          <!-- ===== FORM ===== -->
+          <div>
+            <!-- Progress bar (bonus element) -->
+            <div class="form-progress" aria-live="polite">
+              <label for="form-progress">
+                Form completion
+                <span class="range-value" id="progress-pct">0%</span>
+              </label>
+              <progress id="form-progress" value="0" max="100" aria-label="Form completion progress"></progress>
+            </div>
+
+            <!-- Occupancy meter (bonus element) -->
+            <div class="form-progress" style="margin-bottom:2rem;">
+              <label for="occupancy-meter">Current availability this month</label>
+              <div class="meter-wrap">
+                <meter id="occupancy-meter" min="0" max="10" low="4" high="8" optimum="5"
+                       value="6" aria-label="Current booking availability: 6 of 10 slots filled"></meter>
+                <span class="text-muted">4 of 10 spots remaining</span>
+              </div>
+            </div>
+
+            <form class="contact-form" id="trip-form" novalidate aria-label="Travel request form">
+
+              <!-- Hidden fields -->
+              <input type="hidden" name="form_version" value="1.0" />
+              <input type="hidden" name="source_page" value="contact.html" />
+
+              <!-- ===== FIELDSET 1: Personal Details ===== -->
+              <fieldset>
+                <legend>👤 Personal Details</legend>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="full-name">Full Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="full-name" name="full_name"
+                           placeholder="Your full name"
+                           required minlength="2" maxlength="80"
+                           pattern="[A-Za-zÀ-ÿ\s\-']+"
+                           autocomplete="name"
+                           aria-required="true"
+                           aria-describedby="name-error" />
+                    <span class="field-error" id="name-error" role="alert">Please enter your full name (letters only).</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email"
+                           placeholder="you@example.com"
+                           required maxlength="120"
+                           autocomplete="email"
+                           aria-required="true"
+                           aria-describedby="email-error" />
+                    <span class="field-error" id="email-error" role="alert">Please enter a valid email address.</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Phone Number <span class="required" aria-label="required">*</span></label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="+84 123 456 789"
+                           required
+                           pattern="[\+\d\s\-\(\)]{7,20}"
+                           autocomplete="tel"
+                           aria-required="true"
+                           aria-describedby="phone-error" />
+                    <span class="field-error" id="phone-error" role="alert">Please enter a valid phone number.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password">Create Account Password</label>
+                    <input type="password" id="password" name="password"
+                           placeholder="Min 8 characters"
+                           minlength="8" maxlength="64"
+                           autocomplete="new-password"
+                           aria-describedby="pass-hint" />
+                    <span class="field-error" id="pass-hint" style="color:var(--clr-text-muted);display:block;font-size:.78rem;margin-top:.3rem;">Optional — create an account to track your itinerary.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="favourite-colour">Your Favourite Travel Colour (theme)</label>
+                  <div style="display:flex;align-items:center;gap:1rem;">
+                    <input type="color" id="favourite-colour" name="favourite_colour" value="#1B4F5A"
+                           aria-label="Pick your favourite colour for your personalised travel theme" />
+                    <span class="text-muted" style="font-size:.85rem;">We'll personalise your itinerary document with your colour.</span>
+                  </div>
+                </div>
+
+              </fieldset>
+
+              <!-- ===== FIELDSET 2: Trip Details ===== -->
+              <fieldset>
+                <legend>✈️ Trip Details</legend>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="departure-date">Departure Date <span class="required" aria-label="required">*</span></label>
+                    <input type="date" id="departure-date" name="departure_date"
+                           required
+                           min="2025-01-01"
+                           aria-required="true"
+                           aria-describedby="date-error" />
+                    <span class="field-error" id="date-error" role="alert">Please select a departure date.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="duration">Trip Duration (days) <span class="required" aria-label="required">*</span></label>
+                    <input type="number" id="duration" name="duration_days"
+                           placeholder="e.g. 14"
+                           required min="3" max="90" step="1"
+                           aria-required="true"
+                           aria-describedby="duration-error" />
+                    <span class="field-error" id="duration-error" role="alert">Please enter a trip duration between 3 and 90 days.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="destinations-datalist">Preferred Starting Destination</label>
+                  <input type="text" id="destinations-datalist" name="start_destination"
+                         list="dest-options"
+                         placeholder="Start typing a city or country…"
+                         aria-label="Select or type a starting destination" />
+                  <datalist id="dest-options">
+                    <option value="Ho Chi Minh City, Vietnam" />
+                    <option value="Hanoi, Vietnam" />
+                    <option value="Đà Nẵng, Vietnam" />
+                    <option value="Hội An, Vietnam" />
+                    <option value="Siem Reap, Cambodia" />
+                    <option value="Phnom Penh, Cambodia" />
+                    <option value="Luang Prabang, Laos" />
+                    <option value="Vientiane, Laos" />
+                    <option value="Bangkok, Thailand" />
+                    <option value="Chiang Mai, Thailand" />
+                    <option value="Yangon, Myanmar" />
+                    <option value="Bagan, Myanmar" />
+                  </datalist>
+                </div>
+
+                <div class="form-group">
+                  <label for="budget-range">Budget per person (USD/day) — <output for="budget-range" id="budget-output" class="range-value">80</output></label>
+                  <input type="range" id="budget-range" name="budget_usd_per_day"
+                         min="20" max="300" step="10" value="80"
+                         aria-describedby="budget-output"
+                         aria-label="Daily budget per person in US dollars" />
+                  <div class="range-output">
+                    <span>$20 (budget)</span>
+                    <span>$300 (luxury)</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="travel-style">Preferred Travel Style <span class="required" aria-label="required">*</span></label>
+                  <select id="travel-style" name="travel_style" required
+                          aria-required="true"
+                          aria-describedby="style-error">
+                    <option value="" disabled selected>— Select your style —</option>
+                    <optgroup label="Relaxed">
+                      <option value="beach">🏖️ Beach &amp; Relaxation</option>
+                      <option value="wellness">🧘 Wellness &amp; Retreat</option>
+                    </optgroup>
+                    <optgroup label="Cultural">
+                      <option value="heritage">🏛️ Cultural &amp; Heritage</option>
+                      <option value="food">☕ Food &amp; Culinary</option>
+                      <option value="photography">📷 Photography Tour</option>
+                    </optgroup>
+                    <optgroup label="Active">
+                      <option value="trekking">🥾 Trekking &amp; Hiking</option>
+                      <option value="adventure">🏍️ Motorbike Adventure</option>
+                      <option value="cycling">🚲 Cycling</option>
+                    </optgroup>
+                    <optgroup label="Mixed">
+                      <option value="family">👨‍👩‍👧 Family-Friendly</option>
+                      <option value="romantic">💑 Romantic &amp; Honeymoon</option>
+                    </optgroup>
+                  </select>
+                  <span class="field-error" id="style-error" role="alert">Please select a travel style.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="photo-upload">Upload Inspiration Photos (optional)</label>
+                  <input type="file" id="photo-upload" name="inspiration_photos"
+                         accept="image/jpeg,image/png,image/webp"
+                         multiple
+                         aria-describedby="file-hint" />
+                  <span id="file-hint" class="text-muted" style="font-size:.78rem;display:block;margin-top:.3rem;">JPEG, PNG, or WebP. Max 5 files. Help us understand your travel aesthetic.</span>
+                </div>
+              </fieldset>
+
+              <!-- ===== FIELDSET 3: Group & Accommodation ===== -->
+              <fieldset>
+                <legend>🏨 Group &amp; Accommodation</legend>
+
+                <div class="form-group">
+                  <label>Travel Group Type <span class="required" aria-label="required">*</span></label>
+                  <div class="radio-group" role="radiogroup" aria-required="true" aria-describedby="group-error">
+                    <label class="radio-label">
+                      <input type="radio" name="group_type" value="solo" required aria-describedby="group-error" /> Solo traveller
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="group_type" value="couple" /> Couple
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="group_type" value="friends" /> Group of friends
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="group_type" value="family" /> Family with children
+                    </label>
+                  </div>
+                  <span class="field-error" id="group-error" role="alert">Please select a group type.</span>
+                </div>
+
+                <div class="form-group">
+                  <label>Accommodation Preferences (select all that apply)</label>
+                  <div class="checkbox-group">
+                    <label class="check-label">
+                      <input type="checkbox" name="accom_hostel" value="hostel" /> 🛏️ Hostels &amp; guesthouses
+                    </label>
+                    <label class="check-label">
+                      <input type="checkbox" name="accom_hotel" value="hotel" /> 🏨 Mid-range hotels
+                    </label>
+                    <label class="check-label">
+                      <input type="checkbox" name="accom_boutique" value="boutique" /> ✨ Boutique properties
+                    </label>
+                    <label class="check-label">
+                      <input type="checkbox" name="accom_homestay" value="homestay" /> 🏡 Homestays &amp; farm stays
+                    </label>
+                    <label class="check-label">
+                      <input type="checkbox" name="accom_resort" value="resort" /> 🌴 Luxury resorts
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- ===== FIELDSET 4: Additional Info ===== -->
+              <fieldset>
+                <legend>📝 Additional Information</legend>
+
+                <div class="form-group">
+                  <label for="special-requests">Special Requests or Requirements</label>
+                  <textarea id="special-requests" name="special_requests"
+                            placeholder="Dietary requirements, accessibility needs, celebrations, places you've already visited…"
+                            rows="5"
+                            maxlength="1000"
+                            aria-describedby="request-hint"></textarea>
+                  <span id="request-hint" class="text-muted" style="font-size:.78rem;display:block;margin-top:.3rem;">Max 1,000 characters.</span>
+                </div>
+
+                <div class="form-group">
+                  <label>Extras &amp; Opt-ins</label>
+                  <div class="checkbox-group">
+                    <label class="check-label">
+                      <input type="checkbox" name="newsletter" value="yes" /> 📬 Subscribe to our monthly Southeast Asia travel newsletter
+                    </label>
+                    <label class="check-label" id="privacy-check-wrap">
+                      <input type="checkbox" name="privacy_consent" value="agreed" required
+                             aria-required="true" aria-describedby="privacy-error" />
+                      I agree to the <a href="policy.html" target="_blank">Privacy Policy</a> and consent to Mekong Trails contacting me about my trip. <span class="required" aria-label="required">*</span>
+                    </label>
+                    <span class="field-error" id="privacy-error" role="alert">You must agree to the privacy policy to submit.</span>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- ===== FORM ACTIONS ===== -->
+              <div class="form-actions">
+                <button type="submit" class="btn btn--primary" aria-label="Submit your trip request">
+                  🌏 Submit Trip Request
+                </button>
+                <button type="reset" class="btn btn--outline" aria-label="Clear the form">
+                  ✕ Clear Form
+                </button>
+              </div>
+
+            </form>
+
+            <!-- Success message -->
+            <div class="form-success" role="alert" aria-live="assertive">
+              ✅ Thank you! Your trip request has been received. Our team will be in touch within 48 hours.
+            </div>
+          </div>
+
+          <!-- ===== SIDEBAR INFO ===== -->
+          <aside class="form-info" aria-label="Contact information">
+            <div class="form-info-card">
+              <h3>How It Works</h3>
+              <div class="form-info-item">
+                <span style="font-size:1.4rem;">1️⃣</span>
+                <div><strong>Submit your request</strong><p style="margin:0;font-size:.88rem;color:var(--clr-sand);">Takes about 5 minutes — the more detail the better.</p></div>
+              </div>
+              <div class="form-info-item">
+                <span style="font-size:1.4rem;">2️⃣</span>
+                <div><strong>We design your itinerary</strong><p style="margin:0;font-size:.88rem;color:var(--clr-sand);">Our team builds a personalised day-by-day route (free).</p></div>
+              </div>
+              <div class="form-info-item">
+                <span style="font-size:1.4rem;">3️⃣</span>
+                <div><strong>You review &amp; book</strong><p style="margin:0;font-size:.88rem;color:var(--clr-sand);">We help you book accommodation and transport at no markup.</p></div>
+              </div>
+            </div>
+
+            <div class="form-info-card">
+              <h3>Contact Directly</h3>
+              <div class="form-info-item">
+                <span>📧</span>
+                <div><strong>Email</strong><a href="mailto:hello@mekongtrails.travel" style="color:var(--clr-gold-light);display:block;font-size:.88rem;">hello@mekongtrails.travel</a></div>
+              </div>
+              <div class="form-info-item">
+                <span>📍</span>
+                <div><strong>Office</strong><span style="display:block;font-size:.88rem;color:var(--clr-sand);">31 Lê Duẩn, District 1,<br>Ho Chi Minh City, Vietnam</span></div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="nav__logo" href="index.html" aria-label="Mekong Trails home">
+            <span class="nav__logo-mark" aria-hidden="true">🌏</span>
+            <span class="nav__logo-text">Mekong <span>Trails</span></span>
+          </a>
+          <p>Honest travel guides for Vietnam &amp; Southeast Asia.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="itineraries.html">Itineraries</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="map.html">Visit Us</a></li></ul></div>
+        <div class="footer-col"><h4>Read</h4><ul><li><a href="blog.html">Travel Blog</a></li><li><a href="post-1.html">Latest Post</a></li><li><a href="about.html">Our Story</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="contact.html">Plan My Trip</a></li><li><a href="policy.html">Privacy Policy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mekong Trails. Built for Web Application Development Lab 1.</p>
+        <p>Photos: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Range live output
+    const budgetRange  = document.getElementById('budget-range');
+    const budgetOutput = document.getElementById('budget-output');
+    budgetRange.addEventListener('input', () => { budgetOutput.textContent = '$' + budgetRange.value; });
+  </script>
+</body>
+</html>
