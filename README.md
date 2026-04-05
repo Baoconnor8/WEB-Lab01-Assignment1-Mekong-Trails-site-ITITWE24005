@@ -155,24 +155,5 @@ mekong-trails/
 |------|-------------|----------------|
 | Claude (Anthropic) | "Build a Vietnam/Southeast Asia travel site with all 4.2 form requirements, HTML5 semantics, responsive CSS, Google Maps + YouTube iframes, and WCAG accessibility" | Reviewed all code; adjusted destination content to reflect real Vietnam/SEA locations; customised colour scheme (jade + gold travel palette); verified every form field type against the assignment rubric; checked heading hierarchy and ARIA labels; added itinerary content specific to real routes; wrote the blog post narrative |
 
-> All code was reviewed, understood, and intentionally customised. No template was copied without comprehension.
+> All code was reviewed and intentionally customised.
 
----
-
-## ✅ Student Self-Checklist
-
-- [x] 9 HTML pages (5–10 required)
-- [x] Consistent navigation + working internal/external links
-- [x] 20+ images with `alt` text; multiple `<figure>/<figcaption>` pairs
-- [x] Google Maps iframe + YouTube iframe
-- [x] Full form with ALL 4.2 input types + bonus `progress`, `meter`, `output`
-- [x] External CSS + Flexbox + Grid + responsive at 768px
-- [x] CSS variables for colours
-- [x] Hover/focus states everywhere
-- [x] Semantic HTML5 throughout
-- [x] ARIA labels, skip link, keyboard navigation, heading order
-- [x] `meta viewport`, `meta description`, unique `<title>`, OG tags on every page
-- [x] Favicon
-- [x] Lazy-loading images
-- [x] README + credits
-- [x] AI usage log included (policy.html + README)
